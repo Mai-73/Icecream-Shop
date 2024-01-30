@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
-section {
+/* section {
     height: 100vh;
     width: 100%;
     position: relative;
     background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
 
+
+} */
+
+.main-sec{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
 
 }
 
