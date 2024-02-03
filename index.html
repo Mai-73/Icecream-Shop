@@ -11,6 +11,17 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Sans+Narrow:wght@400;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=PT+Sans+Narrow:wght@400;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <!-- font-family: "Comfortaa", sans-serif; -->
+
 
 </head>
 
@@ -21,10 +32,11 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark my-3">
             <img src="images/logo-img-transformed.png" alt="logo-img" width="130px" class="ml-4">
 
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button class="navbar-toggler bg-info " type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -39,8 +51,9 @@
                     </li>
 
                     <li class="nav-item m-auto dropdown">
-                        <a class="nav-link dropdown-toggle border border-light rounded text-info" href="#" id="navbarDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                        <a class="nav-link dropdown-toggle border border-light rounded text-info" href="#"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Products</a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-secondary" href="#Drinks">Drinks</a>
@@ -60,8 +73,7 @@
                 </ul>
 
                 <form class="form-inline " action="/action_page.php">
-                    <input class="form-control mr-sm-2 border border-secondary" type="text" placeholder="Search">
-                    <button class="btn btn-secondary mr-2" type="submit">Search</button>
+                    <button class="btn btn-secondary mr-2" type="submit">Register</button>
                     <button class="btn btn-info " type="submit">Login</button>
 
                 </form>
@@ -74,23 +86,35 @@
 
     <!-- --------------------mainSection--------------------------- -->
 
-    <main class="wave">
+    <main class="">
 
-        <div class="main-sec container-fluid-lg d-flex">
+        <div class="wave main-sec container-fluid-lg d-flex">
 
-            <div class=" main-contant col-md-6 col-sm-7 text-dark" >
+            <div class=" main-contant col-md-6 col-sm-7 text-dark">
 
                 <div class="content">
-                    <h2 class="py-4" style="text-transform: capitalize; font-size: 33px;">Ice-cream</h2>
-                    <p class="p1 pb-2" style="font-size: 20px;">Unlimited Choices. Unbeatable Price. Free Shoping.</p>
-                    <input class="btn btn1" type="button" value="Shop Now">
-                    <input class="btn btn2" type="button" value="Learn More">
+                    <p class="p1 pb-2" style="font-size: 15px; color: rgb(250, 117, 115);">discover symphony of flavors
+                    </p>
+                    <h2 class="pt-2" style="text-transform: capitalize; font-weight: 900; font-size: 35px;">
+                        indulge in irresistible</h2>
+                    <h2 class="pt-2"
+                        style="text-transform: capitalize; font-weight: 900; font-size: 33px; color:rgb(250, 117, 115);">
+                        frozen delights <i class="fas fa-ice-cream ml-1" style="color: rgb(233, 201, 60);"></i>
+                    </h2>
+
+                    
+                    <p class=" p1 pt-4" style="font-size: 15px;">Unlimited Choices. Unbeatable Price. Free Shoping.</p>
+
+                    <input class="btn btn1 mt-5 mr-3"
+                        style="color: white; background-color:rgb(250, 117, 115);; border-radius: 20px;" type="button"
+                        value="Visit Our Store">
+                    <input class="btn btn2 mt-5 px-4 bg-light" style="color: #fa7573; border-radius: 20px;"
+                        type="button" value="Shop Now">
                 </div>
 
             </div>
 
             <div class=" main-img col-md-6  col-sm-5">
-
                 <img src="images/IMG_20240123_190322-removebg-preview11.png" alt="img" class="main-img-img ">
 
             </div>
