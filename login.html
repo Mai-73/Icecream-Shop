@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UV-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.xyz/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+
+<body >
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark my-3">
+            <img src="images/logo-img-transformed.png" alt="logo-img" width="130px" class="ml-5">
+
+            <button class="navbar-toggler bg-info " type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navbar-collapse-lg ml-4" id="collapsibleNavbar">
+
+                <ul class="nav nav-pills navbar-nav ml-auto mt-lg-0 ">
+
+                    <li class="nav-item m-auto ">
+                        <a class="nav-link text-info" href="#main">Home</a>
+                    </li>
+                    <li class="nav-item m-auto">
+                        <a class="nav-link text-info" href="#About-Us">About Us</a>
+                    </li>
+
+                    <li class="nav-item m-auto dropdown">
+                        <a class="nav-link dropdown-toggle border border-light rounded text-info" href="#"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Products</a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-secondary" href="#Drinks">Drinks</a>
+                            <a class="dropdown-item text-secondary" href="#Equipment">Equipment</a>
+                            <a class="dropdown-item text-secondary" href="#Supplies">Plates Supplies</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item m-auto">
+                        <a class="nav-link text-info" href="#Services">Services</a>
+                    </li>
+
+
+                    <li class="nav-item m-auto">
+                        <a class="nav-link text-info" href="#CONTACT-US">CONTACT US</a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav nav-pills navbar-nav ml-auto mt-lg-0 ">
+                    <li class="nav-item mr-4">
+                        <a class="nav-link bg-info text-white" href="login.html">Sign In</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a class="nav-link bg-info text-white" href="register.html">Sign up</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+
+
+    <section class="section-form bg-white">
+        <h2 class="text-info">Login User</h2>
+
+        <form>
+            <input type="text" placeholder="Enter User Name" id="userName">
+            <input type="password" placeholder="Enter User password" id="password">
+            <input type="submit" value="Sign In" id="signIn">
+
+            Sign up Now? <a href="register.html" class="text-light">Register</a>
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.xyz/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.xyz/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

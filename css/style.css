@@ -6,19 +6,11 @@
 }
 
 nav {
-
-    background-color: rgb(255, 255, 255);
-    /* height: 80px; */
+    background-color: rgb(248, 248, 248);
+    height: 80px;
 }
 
-/* section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
 
-
-} */
 main {
     height: 120vh;
     width: 100%;
@@ -34,10 +26,8 @@ main {
 }
 
 .main-contant {
-    /* position: absolute; */
     width: 100%;
     height: 100%;
-
 }
 
 .main-sec .main-contant .content {
@@ -47,19 +37,18 @@ main {
     left: 50%;
     transform: translate(-50%, -80%);
     text-align: left;
-    /* font-size: 35px;  */
     font-family: "Comfortaa", sans-serif;
-    /* font-weight: bold; */
 }
 
 .main-contant .content h2 .fa-ice-cream {
     rotate: 30deg;
-
 }
 
-main .wave::before{
+main .wave::before {
     content: "";
     position: absolute;
+    display: block;
+    margin: 0 auto;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -73,16 +62,11 @@ main .wave::before{
 .main-sec .main-img {
     width: 100%;
     height: 100%;
-    /* background-color: blue; */
-
-
-}
+   }
 
 .main-sec .main-img .main-img-img {
     height: 100%;
     width: 100%;
-    /* margin-top:-50px; */
-    /* margin-left: -60px; */
 }
 
 /* ----------------titles------------------------- */
@@ -96,16 +80,14 @@ main .wave::before{
 }
 
 
-
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.sec1{
+.sec1 {
     position: relative;
 }
+
 .types .card-type {
     height: 300px;
-    /* width: 270px; */
-    margin-top: 30px ;
-    /* margin-left: 50px; */
+    margin-top: 30px;
     position: relative;
     border-radius: 20px;
     transition: 0.5s;
@@ -157,15 +139,16 @@ main .wave::before{
     background-size: cover;
 
 }
+
 /* /////////////////////////////////////////SECTION|_2//////////////////////////////////////////// */
 
-.sec2{
+.sec2 {
     /* height: 700px; */
     background-color: rgba(242, 132, 130, 0.575);
     /* position: relative; */
 }
 
-.about-sec{
+.about-sec {
     position: relative;
     /* height: 100%; */
     height: 900px;
@@ -185,30 +168,23 @@ main .wave::before{
     background-size: cover;
 }
 
-.about-sec .about-contant{
-    /* position: absolute; */
-    margin-top: 220px;
+.about-sec .about-contant {
+    margin-top: 220px; 
 }
 
 .about-contant h2 .fa-ice-cream {
     rotate: 30deg;
-
 }
 
 .about-sec .about-img {
     width: 100%;
     height: 100%;
-    margin-top: 220px;
-
-    /* background-color: blue; */
-
-
+    margin-top: 150px;
 }
 
 .about-sec .about-img .about-img-img {
-    height: 550px;
-    width: 600px;
-    /* margin-top:-50px; */
-    /* margin-left: 60px; */
-    /* background-color: black; */
+    height: 650px;
+    width: 100%;
 }
+
+/* /////////////////////////////////////////////////////////////////////////////////////// */
