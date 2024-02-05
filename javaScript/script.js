@@ -1,3 +1,29 @@
+let joinBtn = document.querySelector("#joinBtn")
+
+joinBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    setTimeout(() => {
+        window.location = "login.html"
+    }, 100)
+})
+
+
+// ///////////////////////////////////////////////////////////////////
+let userInfo = document.querySelector("#user_info")
+let userData = document.querySelector("#user")
+let links = document.querySelector("#links")
+
+if (localStorage.getItem("userName")) {
+    links.remove()
+    userInfo.style.display = "block"
+    userData.innerHTML = localStorage.getItem("userName")
+}
+
+
+
+
+
+
 let products = [
     { id: 1, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageURL: "images/coffee.jpg" },
     { id: 2, title: "Cereal Ice Cream", price: "20 LE", salePrice: "17 LE", imageURL: "images/cereal.jpg" },

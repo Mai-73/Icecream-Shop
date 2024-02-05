@@ -10,6 +10,10 @@ nav {
     height: 80px;
 }
 
+nav ul #user_info {
+    display: none;
+}
+
 
 main {
     height: 120vh;
