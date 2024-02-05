@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ice-cream Shop</title>
+    <title>Frozen Fantasy</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.css">
 
@@ -35,18 +35,13 @@
         <nav class="navbar navbar-expand-md navbar-dark ">
             <img src="images/logo-img-removebg-preview.png" alt="logo-img" width="90px" height="80px" class="ml-5">
 
-            <button class="navbar-toggler bg-info " type="button" data-toggle="collapse"
+            <!-- <button id="navbar-toggler" class="navbar-toggler bg-info " type="button" data-toggle="collapse"
                 data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
+
 
             <div class="collapse navbar-collapse navbar-collapse-lg ml-4" id="collapsibleNavbar">
-
-                <ul class="nav nav-pills navbar-nav ml-auto mt-lg-0 " id="user_info">
-                    <li>
-                        <a class="nav-link text-info" href="#" id="user"></a>
-                    </li>
-                </ul>
 
                 <ul id="links" class="nav nav-pills navbar-nav ml-auto mt-lg-0 ">
 
@@ -75,21 +70,30 @@
                     </li>
                 </ul>
 
-                <!-- <ul class="nav nav-pills navbar-nav ml-auto mt-lg-0 ">
-
-
-
-                    <li class="nav-item mr-4">
-                        <a class="nav-link bg-info text-white" href="register.html">Sign up</a>
+                <ul id="user_info" class=" nav-pills navbar-nav ml-auto mt-lg-0 ">
+                    <li class="nav-item mr-3  ">
+                        <a class="nav-link text-info" href="#" id="user"></a>
                     </li>
-                </ul> -->
 
-                <!-- <form class="form-inline " action="/action_page.php">
-                    <button class="btn btn-secondary mr-2" type="submit">Register</button>
-                    <button class="btn btn-info " type="submit">Login</button>
+                    <li class="shopping_cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge"></span>
 
-                </form> -->
+                        <div class="carts_products">
+                            <div></div>
+                            <a href="cartsproducts.html">View All Products</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item mr-3 ">
+                        <a class="nav-link text-info" href="#" id="logout">Log Out</a>
+                    </li>
+                </ul>
+
             </div>
+
+
+
         </nav>
     </header>
 
@@ -108,7 +112,7 @@
                         indulge in irresistible</h2>
                     <h2 class="pt-2"
                         style="text-transform: capitalize; font-weight: 900; font-size: 33px; color:rgb(250, 117, 115);">
-                        frozen delights<i class="fas fa-ice-cream" style="color: rgb(233, 201, 60);"></i>
+                        Frozen Fantasy<i class="fas fa-ice-cream" style="color: rgb(233, 201, 60);"></i>
                     </h2>
 
 
@@ -247,7 +251,7 @@
                         alias vitae dolorem culpa, omnis veritatis.
                     </p>
                     <div class=" row">
-                       <input id="joinBtn" class="col-lg-3 col-md-4 col-sm-5 btn mt-3 mr-3 px-4 h-auto"
+                        <input id="joinBtn" class="col-lg-3 col-md-4 col-sm-5 btn mt-3 mr-3 px-4 h-auto"
                             style="color: white; background-color:rgb(250, 117, 115); border-radius: 20px;"
                             type="button" value="Join Us">
                         <input class="col-lg-3 col-md-4 col-sm-5 btn  mt-3 px-4 bg-light"
@@ -288,92 +292,265 @@
 
         </div>
 
-        <!-- --------------------footerSection--------------------------- -->
+        <div class="container-xl Products-Section">
 
-        <footer id="CONTACT-US ">
-            <div class="container-fluid ">
-                <div class="footer-containt d-flex row text-center justify-content-around m-auto ">
+            <div class="row">
 
-                    <div class="col-lg-4  col-md-12  ">
-                        <hr class="border-top border-3 border-light my-3">
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item ">
+                        <img class="card-img-top Products-item-img" src="images/coffee.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Coffee Ice Cream</h4>
+                            <!-- <p class="card-text item-text">Washed Heirloom G2 - 300 g</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
 
+                        <div class="card-img-overlay item-overlay">
 
-                        <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
-                            alt="logo-img" width="90" height="60" draggable="false">
-
-                        <span class="pl-2">Good Company.</span>
-
-
-                        <hr class="border-top border-3 border-light my-3">
-                        <address>
-                            <p>Tel : 000-000-000</p>
-                            <p>Address : EGYPT</p>
-                            <p>Fax : 000-000-000</p>
-                        </address>
-                    </div>
-
-                    <div class="col-lg-4  col-md-12 ">
-                        <hr class="border-top border-3 border-light my-3">
-
-
-                        <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
-                            alt="logo-img" width="90" height="60" draggable="false">
-
-                        <span class="pl-2"> Important links.</span>
-
-                        <hr class="border-top border-3 border-light my-3">
-                        <p>
-                            <a class="important-links" href="#">Visit Us</a>
-                        </p>
-                        <p>
-                            <a class="important-links" href="#">Take alook</a>
-                        </p>
-                        <p>
-                            <a class="important-links" href="#">Your health is more important</a>
-                        </p>
-
-
-                    </div>
-
-                    <div class="col-lg-4  col-md-12 ">
-                        <hr class="border-top border-3 border-light my-3">
-
-
-                        <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
-                            alt="logo-img" width="90" height="60" draggable="false">
-
-                        <span class="pl-2">Vision.</span>
-
-                        <hr class="border-top border-3 border-light my-3">
-                        <p>Serveices for all</p>
-                        <p>Provide best serveices</p>
-                        <p>you will be better than before</p>
+                        </div>
                     </div>
                 </div>
 
-                <hr class="border-top border-3 border-light my-3">
-                <span class="text-center d-block title py-4" style="font-weight: 600; font-size: 20px;">
-                    COPYRIGHT &copy; 2024 ICECREAM.ALL RIGHTS
-                </span>
-                <hr class="border-top border-3 border-light my-1">
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item">
+                        <img class="card-img-top Products-item-img" src="images/cereal.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Cereal Ice Cream</h4>
+                            <!-- <p class="card-text item-text">Washed Caturra Anaerobic - 200 g</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item">
+                        <img class="card-img-top Products-item-img" src="images/chocolate.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Chocolate Ice Cream</h4>
+                            <!-- <p class="card-text item-text">SL28 & SL 34 Washed - 250 g</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+
+                    <div class="card  Products-item">
+                        <img class="card-img-top Products-item-img" src="images/Lemon.jpg" alt="Card image"
+                            height="250px">
+
+                        <div class="card-body ">
+                            <h4 class="card-title item-title">Lemon Ice Cream</h4>
+                            <!-- <p class="card-text item-text">Washed Mixed Varietals - 300 g</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item">
+                        <img class="card-img-top Products-item-img" src="images/Black-Forest.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Black-Forest Ice Cream</h4>
+                            <!-- <p class="card-text item-text"> Espresso Machine</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item">
+                        <img class="card-img-top Products-item-img" src="images/apricot.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Apricot Ice Cream</h4>
+                            <!-- <p class="card-text item-text">ual Boiler Flow Control-BLACK</p> -->
+                            <p><del>20EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+                    <div class="card Products-item">
+                        <img class="card-img-top Products-item-img" src="images/Almond.jpg" alt="Card image"
+                            height="250px">
+                        <div class="card-body">
+                            <h4 class="card-title item-title">Almond Ice Cream</h4>
+                            <!-- <p class="card-text item-text">Digital Adjustable Coffee Tamper</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4  col-sm-6">
+
+                    <div class="card  Products-item">
+                        <img class="card-img-top Products-item-img" src="images/green tea.jpg" alt="Card image"
+                            height="250px">
+
+                        <div class="card-body ">
+                            <h4 class="card-title item-title">Green Tea Ice Cream</h4>
+                            <!-- <p class="card-text item-text">Espresso Machine</p> -->
+                            <p><del>25EGP</del> 20EGP</p>
+                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                        </div>
+
+                        <div class="card-img-overlay item-overlay">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div> <!--row1-->
+
+        </div>
+
+        </div>
+
+        <!-- -----------------------pagination------------------------ -->
+
+        <ul class="pagination  justify-content-center pb-4">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+
+    </section>
+
+    <!-- ---------------------Section_4--------------------------- -->
+
+
+
+    <!-- --------------------footerSection--------------------------- -->
+
+    <footer id="CONTACT-US ">
+        <div class="container-fluid ">
+            <div class="footer-containt d-flex row text-center justify-content-around m-auto ">
+
+                <div class="col-lg-4  col-md-12  ">
+                    <hr class="border-top border-3 border-light my-3">
+
+
+                    <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
+                        alt="logo-img" width="90" height="60" draggable="false">
+
+                    <span class="pl-2">Good Company.</span>
+
+
+                    <hr class="border-top border-3 border-light my-3">
+                    <address>
+                        <p>Tel : 000-000-000</p>
+                        <p>Address : EGYPT</p>
+                        <p>Fax : 000-000-000</p>
+                    </address>
+                </div>
+
+                <div class="col-lg-4  col-md-12 ">
+                    <hr class="border-top border-3 border-light my-3">
+
+
+                    <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
+                        alt="logo-img" width="90" height="60" draggable="false">
+
+                    <span class="pl-2"> Important links.</span>
+
+                    <hr class="border-top border-3 border-light my-3">
+                    <p>
+                        <a class="important-links" href="#">Visit Us</a>
+                    </p>
+                    <p>
+                        <a class="important-links" href="#">Take alook</a>
+                    </p>
+                    <p>
+                        <a class="important-links" href="#">Your health is more important</a>
+                    </p>
+
+
+                </div>
+
+                <div class="col-lg-4  col-md-12 ">
+                    <hr class="border-top border-3 border-light my-3">
+
+
+                    <img class="footer-img rounded-circle  custom-shadow1 " src="images/logo-img-transformed.png"
+                        alt="logo-img" width="90" height="60" draggable="false">
+
+                    <span class="pl-2">Vision.</span>
+
+                    <hr class="border-top border-3 border-light my-3">
+                    <p>Serveices for all</p>
+                    <p>Provide best serveices</p>
+                    <p>you will be better than before</p>
+                </div>
             </div>
 
+            <hr class="border-top border-3 border-light my-3">
+            <span class="text-center d-block title py-4" style="font-weight: 600; font-size: 20px;">
+                COPYRIGHT &copy; 2024 ICECREAM.ALL RIGHTS
+            </span>
+            <hr class="border-top border-3 border-light my-1">
+        </div>
 
-        </footer>
+
+    </footer>
 
 
-        <!-- -------------------------------JavaScript links-------------------------------- -->
+    <!-- -------------------------------JavaScript links-------------------------------- -->
 
-        <script src="javaScript/script.js"></script>
+    <script src="javaScript/script.js"></script>
 
-        <!-- jQuery library -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
