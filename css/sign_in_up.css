@@ -6,9 +6,6 @@
 }
 
 .section-form {
-
-    /* height: 570px; */
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,7 +21,6 @@
     width: 50%;
     height: 30px;
     margin: 5px auto;
-    /* padding: 20px 0; */
     border: 1px solid beige;
     outline: none;
 
@@ -32,6 +28,5 @@
 
 .section-form form input[type="submit"]:hover {
     opacity: 0.5;
-
 }
 
