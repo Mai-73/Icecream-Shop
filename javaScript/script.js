@@ -25,7 +25,7 @@ let allProducts = document.querySelector(".Products")
 
 let products = [
     { id: 1, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/coffee.jpg" },
-    { id: 2, title: "Cereal Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/cereal.jpg" },
+    { id: 2, title: "Vanilla Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/vanilla.jpg" },
     { id: 3, title: "Chocolate Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/chocolate.jpg" },
     { id: 4, title: "Lemon Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Lemon.jpg" },
     { id: 5, title: "Black-Forest Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Black-Forest.jpg" },
@@ -53,7 +53,8 @@ let products = [
     { id: 27, title: "Raspberry Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/raspberry.jpg" },
     { id: 28, title: "Kiwi Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Kiwi.jpg" },
     { id: 29, title: "Watermelon Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/watermelon.jpg" },
-    { id: 30, title: "Red Apple Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/red apple.jpg" }
+    { id: 30, title: "Red Apple Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/red apple.jpg" },
+    { id: 31, title: "Cereal Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/cereal.jpg" },
 
 ]
 
@@ -66,7 +67,7 @@ function drawItems() {
                  <div class="products-contant" width="100%">
                             <h5 class="title item-title">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
-                            <a href="#" class="btn btn-secondary">Add To Cart</a>
+                            <a href="#" class="btn btn-secondary" onClick="check()">Add To Cart</a>
                 </div> 
                         <div class="img-overlay item-overlay">
 
@@ -79,3 +80,33 @@ function drawItems() {
     allProducts.innerHTML = y;
 }
 drawItems()
+
+function check() {
+    if (localStorage.getItem = ("username")) {
+        window.location = "cartsproducts.html"
+    } else {
+        window.location = "login.html"
+    }
+}
+
+let cartProductDiv = document.querySelector(".carts_products div")
+
+function addToCart(id) {
+    let choosenItem = products.find((item) => item.id === id);
+    cartProductDiv.innerHTML += `<p>${choosenItem.title}</p>`
+}
+//////////////////////////////////////////////////////////////////////////
+let shoppingCartIcon = document.querySelector(".shopping_cart")
+let cartsProducts = document.querySelector(".carts_products")
+shoppingCartIcon.addEventListener("click", opencart)
+
+function opencart() {
+    if (cartProductDiv.innerHTML != "") {
+        if (cartsProducts.style.display == "block") {
+            cartsProducts.style.display = "none"
+        } else {
+            cartsProducts.style.display = "block"
+        }
+    }
+}
+
