@@ -1,9 +1,17 @@
 let joinBtn = document.querySelector("#joinBtn")
+let shopNow = document.querySelector("#shopNow")
 
 joinBtn.addEventListener("click", function (e) {
     e.preventDefault();
     setTimeout(() => {
         window.location = "login.html"
+    }, 100)
+})
+
+shopNow.addEventListener("click", function (e) {
+    e.preventDefault();
+    setTimeout(() => {
+        window.location = "productsPage.html"
     }, 100)
 })
 
@@ -24,11 +32,11 @@ if (localStorage.getItem("userName")) {
 let allProducts = document.querySelector(".Products")
 
 let products = [
-    { id: 1, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/coffee.jpg" },
+    { id: 1, title: "Chocolate Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/chocolate.jpg" },
     { id: 2, title: "Vanilla Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/vanilla.jpg" },
-    { id: 3, title: "Chocolate Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/chocolate.jpg" },
+    { id: 3, title: "Black-Forest Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Black-Forest.jpg" },
     { id: 4, title: "Lemon Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Lemon.jpg" },
-    { id: 5, title: "Black-Forest Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Black-Forest.jpg" },
+    { id: 5, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/coffee.jpg" },
     { id: 6, title: "Apricot Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/apricot.jpg" },
     { id: 7, title: "Almond Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Almond.jpg" },
     { id: 8, title: "Green Tea Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/green tea.jpg" },
@@ -67,7 +75,7 @@ function drawItems() {
                  <div class="products-contant" width="100%">
                             <h5 class="title item-title">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
-                            <a href="#" class="btn btn-secondary" onClick="check()">Add To Cart</a>
+                            <a href="#" class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</a>
                 </div> 
                         <div class="img-overlay item-overlay">
 

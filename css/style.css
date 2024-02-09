@@ -15,7 +15,7 @@ nav {
 
 nav ul#user_info li i {
     color: #ffffff;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
     margin-top: 5px;
 }
@@ -26,16 +26,38 @@ nav ul#user_info li .badge {
     height: 15px;
     /* background-color: #f28482; */
     color: #000000;
-    background-color: rgb(241, 241, 94);
+    background-color: #f0bf45;
     text-align: center;
     display: block;
     border-radius: 50%;
     top: 13px;
-    right: 115px;
+    right: 165px;
     font-size: 12px;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+.shopping_cart .carts_products {
+    /* position: relative; */
+    position: absolute;
+    width: 270px;
+    transform: translate(-40%, 0);
+    top: 70px;
+    padding: 10px;
+    border: 1px solid #84a59d;
+    background-color: rgb(223, 221, 221);
 
+}
+
+.shopping_cart .carts_products a {
+    display: block;
+    color: #347f9c;
+    margin: 4px 0;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+/* /////////////////////////////////////////////////////////////////////////////// */
 main {
     height: 100vh;
     width: 100%;
