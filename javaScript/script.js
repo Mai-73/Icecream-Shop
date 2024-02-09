@@ -1,22 +1,3 @@
-let joinBtn = document.querySelector("#joinBtn")
-let shopNow = document.querySelector("#shopNow")
-
-joinBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    setTimeout(() => {
-        window.location = "login.html"
-    }, 100)
-})
-
-shopNow.addEventListener("click", function (e) {
-    e.preventDefault();
-    setTimeout(() => {
-        window.location = "productsPage.html"
-    }, 100)
-})
-
-
-// ///////////////////////////////////////////////////////////////////
 let userInfo = document.querySelector("#user_info")
 let userData = document.querySelector("#user")
 let links = document.querySelector("#links")
@@ -24,6 +5,7 @@ let links = document.querySelector("#links")
 if (localStorage.getItem("userName")) {
     links.remove()
     userInfo.style.display = "flex"
+    userInfo.style.color = "black"
     userData.innerHTML = localStorage.getItem("userName")
 }
 
@@ -63,7 +45,6 @@ let products = [
     { id: 29, title: "Watermelon Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/watermelon.jpg" },
     { id: 30, title: "Red Apple Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/red apple.jpg" },
     { id: 31, title: "Cereal Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/cereal.jpg" },
-
 ]
 
 function drawItems() {
@@ -106,6 +87,7 @@ function addToCart(id) {
 //////////////////////////////////////////////////////////////////////////
 let shoppingCartIcon = document.querySelector(".shopping_cart")
 let cartsProducts = document.querySelector(".carts_products")
+
 shoppingCartIcon.addEventListener("click", opencart)
 
 function opencart() {

@@ -20,7 +20,7 @@ loginBtn.addEventListener("click", function (e) {
         if (getUserName && getUserName.trim() === userName.value.trim() && getPassword && getPassword.trim() === password.value.trim()) {
 
             setTimeout(() => {
-                window.location = "productsPage.html"
+                window.location = "productspage.html"
             }, 500)
         } else {
             alert("not valid")
