@@ -7,7 +7,6 @@ if (localStorage.getItem("userName")) {
     userInfo.style.display = "flex"
     userInfo.style.color = "black"
     userData.style.fontSize = "35px"
-    // userData.style.marginRight = "330px"
     userData.style.textTransform = "capitalize";
 
     userData.innerHTML = "Welcome " + localStorage.getItem("userName")
@@ -62,32 +61,27 @@ let products = [
 function drawItems() {
     let y = products.map((item) => {
         return ` 
-        <div class="col-lg-3 col-sm-5 Products-form  my-2 mx-auto" >
-              <div class="Products-item px-2">
-                 <img class=" Products-item-img" src="${item.imageUrl}" alt="image" >
-                 <div class="products-contant" width="100%">
-                            <h5 class="title item-title">${item.title}</h5>
-                            <p><del>${item.price}</del> ${item.salePrice}</p>   
+        <div class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
+              <div class="card border border-info my-4 pt-3">
+                 <img class=" Products-item-img card-img-top m-auto" src="${item.imageUrl}" alt="image" >
+                 <div class="products-contant card-body" width="100%">
+                            <h5 class="title card-title">${item.title}</h5>
+                            <p><del>${item.price}</del> ${item.salePrice}</p>
                             <button class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
-                            <i id="fav" class="far fa-heart "></i> 
+                            <i id="fav-${item.id}" class="far fa-heart" onClick="addToFav(${item.id})"></i>    
                  </div> 
 
-                 
+                
+
                 </div>
         </div>
-
+        
         `
+
     })
-    allProducts.innerHTML = y;
+    allProducts.innerHTML = y.join('');
 }
 drawItems()
-// //////////////////////////////////////////////////////////////
-// let favorite = document.querySelector("#fav")
-
-// favorite.addEventListener("click", function () {
-//     document.getElementById(fav).className = "fas fa-heart";
-//     favorite.style.color = "red";
-// })
 
 // ///////////////////////////////////////////////////////////////
 
@@ -104,6 +98,27 @@ if (addedItem) {
     badge.style.display = "block";
     badge.innerHTML = addedItem.length;
 }
+// ////////////////////////////////////////////addToFav/////////////////////////////////////////////////
+
+function addToFav(id) {
+    if (localStorage.getItem = ("username")) {
+        var heartIcon = document.getElementById(`fav-${id}`);
+        if (heartIcon.classList.contains("far")) {
+            heartIcon.classList.remove("far");
+            heartIcon.classList.add("fas");
+            heartIcon.style.color = "red";
+            // addToFavorites(id);
+        } else {
+            heartIcon.classList.remove("fas");
+            heartIcon.classList.add("far");
+            heartIcon.style.color = "black";
+            // removeFromFavorites(id);
+        }
+    } else {
+        window.location = "login.html";
+    }
+}
+//////////////////////////////////////addToCart///////////////////////////////////////////////
 
 if (localStorage.getItem = ("username")) {
     function addToCart(id) {
@@ -120,7 +135,6 @@ if (localStorage.getItem = ("username")) {
 } else {
     window.location = "login.html"
 }
-
 
 
 

@@ -236,34 +236,36 @@ main .wave::before {
 
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 .Products-form {
-    height: 450px;
-    width: 25%;
-    /* background-color: #f0bf45 */
-    border: 1px solid #84a59d;
+    height: 550px;
+    /* width: 20%;  */
+    /* background-color: #f0bf45; */
+    /* border: 1px solid #84a59d; */
 }
 
 .Products-form .Products-item-img {
-    margin: 10px auto;
-    width: 100%;
-    height: 280px;
+    /* margin: 10px auto; */
+    width: 90%;
+    height: 350px;
+
 }
 
+/* 
 .Products-form .Products-item .products-contant {
     position: absolute;
     padding-top: 10px;
     width: 100%;
 
-}
+} */
 
-.Products-form .Products-item .products-contant h5 {
+.Products-form .card .products-contant h5 {
     font-weight: bolder;
 }
 
-.Products-form .Products-item .products-contant #fav {
+.Products-form .card .products-contant .fa-heart {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     right: 55px;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
 
 }
