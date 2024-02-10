@@ -22,8 +22,8 @@ nav ul#user_info li i {
 
 nav ul#user_info li .badge {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     /* background-color: #f28482; */
     color: #000000;
     background-color: #f0bf45;
@@ -259,7 +259,7 @@ main .wave::before {
     font-weight: bolder;
 }
 
-.Products-form .Products-item .products-contant .fav {
+.Products-form .Products-item .products-contant #fav {
     position: absolute;
     bottom: 10px;
     right: 55px;

@@ -23,10 +23,10 @@ let allProducts = document.querySelector(".Products")
 let products = [
     { id: 1, title: "Chocolate Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/chocolate.jpg" },
     { id: 2, title: "Vanilla Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/vanilla.jpg" },
-    { id: 3, title: "Mango Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/mango-removebg-preview.png" },
+    { id: 3, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/coffee.jpg" },
     { id: 4, title: "Strawberry Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Strawberry.jpg" },
-    { id: 5, title: "Lemon Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/Lemon.jpg" },
-    { id: 6, title: "Coffee Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/coffee.jpg" }
+    { id: 5, title: "Caramel Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/caramel.jpg" },
+    { id: 6, title: "Mango Ice Cream", price: "20 LE", salePrice: "17 LE", imageUrl: "images/mango.jpg" }
 
 ]
 

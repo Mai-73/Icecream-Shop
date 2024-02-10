@@ -7,11 +7,19 @@ if (localStorage.getItem("userName")) {
     userInfo.style.display = "flex"
     userInfo.style.color = "black"
     userData.style.fontSize = "35px"
-    userData.style.marginRight = "330px"
+    // userData.style.marginRight = "330px"
     userData.style.textTransform = "capitalize";
 
     userData.innerHTML = "Welcome " + localStorage.getItem("userName")
 }
+
+let logOutBtn = document.querySelector("#logout")
+logOutBtn.addEventListener("click", function () {
+    localStorage.clear();
+    setTimeout(() => {
+        window.location = "login.html";
+    }, 1500)
+})
 
 // /////////////////////////////////////////////////////////////////////
 
@@ -61,7 +69,7 @@ function drawItems() {
                             <h5 class="title item-title">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>   
                             <button class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
-                            <i class="far fa-heart fav"></i> 
+                            <i id="fav" class="far fa-heart "></i> 
                  </div> 
 
                  
@@ -74,9 +82,12 @@ function drawItems() {
 }
 drawItems()
 // //////////////////////////////////////////////////////////////
-// let favorite = document.querySelector(".fav")
+// let favorite = document.querySelector("#fav")
 
-// favorite.addEventListener("click",)
+// favorite.addEventListener("click", function () {
+//     document.getElementById(fav).className = "fas fa-heart";
+//     favorite.style.color = "red";
+// })
 
 // ///////////////////////////////////////////////////////////////
 
@@ -84,8 +95,15 @@ let cartProductDiv = document.querySelector(".carts_products div")
 
 let badge = document.querySelector(".badge")
 
-let addedItem = [];
+let addedItem = localStorage.getItem("productsInCart") ? JSON.parse(localStorage.getItem("productsInCart")) : [];
 
+if (addedItem) {
+    addedItem.map(item => {
+        cartProductDiv.innerHTML += `<p>${item.title}</p>`
+    })
+    badge.style.display = "block";
+    badge.innerHTML = addedItem.length;
+}
 
 if (localStorage.getItem = ("username")) {
     function addToCart(id) {
