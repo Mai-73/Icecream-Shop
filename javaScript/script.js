@@ -6,7 +6,11 @@ if (localStorage.getItem("userName")) {
     links.remove()
     userInfo.style.display = "flex"
     userInfo.style.color = "black"
-    userData.innerHTML = localStorage.getItem("userName")
+    userData.style.fontSize = "35px"
+    userData.style.marginRight = "330px"
+    userData.style.textTransform = "capitalize";
+
+    userData.innerHTML = "Welcome " + localStorage.getItem("userName")
 }
 
 // /////////////////////////////////////////////////////////////////////
@@ -55,12 +59,12 @@ function drawItems() {
                  <img class=" Products-item-img" src="${item.imageUrl}" alt="image" >
                  <div class="products-contant" width="100%">
                             <h5 class="title item-title">${item.title}</h5>
-                            <p><del>${item.price}</del> ${item.salePrice}</p>
-                            <a href="#" class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</a>
-                </div> 
-                        <div class="img-overlay item-overlay">
+                            <p><del>${item.price}</del> ${item.salePrice}</p>   
+                            <button class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
+                            <i class="far fa-heart fav"></i> 
+                 </div> 
 
-                        </div>
+                 
                 </div>
         </div>
 
@@ -69,21 +73,39 @@ function drawItems() {
     allProducts.innerHTML = y;
 }
 drawItems()
+// //////////////////////////////////////////////////////////////
+// let favorite = document.querySelector(".fav")
 
-function check() {
-    if (localStorage.getItem = ("username")) {
-        window.location = "cartsproducts.html"
-    } else {
-        window.location = "login.html"
-    }
-}
+// favorite.addEventListener("click",)
+
+// ///////////////////////////////////////////////////////////////
 
 let cartProductDiv = document.querySelector(".carts_products div")
 
-function addToCart(id) {
-    let choosenItem = products.find((item) => item.id === id);
-    cartProductDiv.innerHTML += `<p>${choosenItem.title}</p>`
+let badge = document.querySelector(".badge")
+
+let addedItem = [];
+
+
+if (localStorage.getItem = ("username")) {
+    function addToCart(id) {
+        let choosenItem = products.find((item) => item.id === id);
+        cartProductDiv.innerHTML += `<p>${choosenItem.title}</p>`
+        addedItem = [...addedItem, choosenItem];
+        localStorage.setItem("productsInCart", JSON.stringify(addedItem))
+        let cartProductsLength = document.querySelectorAll(".carts_products div p")
+
+        badge.style.display = "block";
+        badge.innerHTML = cartProductsLength.length;
+    }
+
+} else {
+    window.location = "login.html"
 }
+
+
+
+
 //////////////////////////////////////////////////////////////////////////
 let shoppingCartIcon = document.querySelector(".shopping_cart")
 let cartsProducts = document.querySelector(".carts_products")
@@ -99,4 +121,8 @@ function opencart() {
         }
     }
 }
+
+// ///////////////////////////////////////////////////////////////////////
+
+
 
