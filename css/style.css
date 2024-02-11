@@ -12,6 +12,9 @@ nav {
     z-index: 5;
 }
 
+nav  ul#user_info {
+    display: none;
+}
 
 nav ul#user_info li i {
     color: #000000;
@@ -62,7 +65,7 @@ nav ul#user_info li .badge {
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 main {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     position: relative;
     background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
@@ -103,7 +106,7 @@ main .wave::before {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 315px;
+    height: 330px;
     background-image: url(../images/wave444.png);
     background-repeat: no-repeat;
     background-size: cover;

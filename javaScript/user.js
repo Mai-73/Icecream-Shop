@@ -1,16 +1,16 @@
-let user_Info = document.querySelector("#user_info")
-let userD = document.querySelector("#user")
+let userInfo = document.querySelector("#user_info")
+let userData = document.querySelector("#user")
+let links = document.querySelector("#links")
 
 if (localStorage.getItem("userName")) {
-    user_Info.style.display = "flex"
-    user_Info.style.color = "black"
-    userD.style.fontSize = "35px"
-   
-    userD.style.textTransform = "capitalize";
+    links.remove()
+    userInfo.style.display = "flex"
+    userInfo.style.color = "black"
+    userData.style.fontSize = "35px"
+    userData.style.textTransform = "capitalize";
 
-    userD.innerHTML = "Welcome " + localStorage.getItem("userName")
+    userData.innerHTML = "Welcome " + localStorage.getItem("userName")
 }
-
 
 let logOutBtn = document.querySelector("#logout")
 logOutBtn.addEventListener("click", function () {
