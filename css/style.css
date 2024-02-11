@@ -12,7 +12,7 @@ nav {
     z-index: 5;
 }
 
-nav  ul#user_info {
+nav ul#user_info {
     display: none;
 }
 
@@ -44,7 +44,7 @@ nav ul#user_info li .badge {
 .shopping_cart .carts_products {
     /* position: relative; */
     position: absolute;
-    width: 270px;
+    width: 300px;
     transform: translate(-40%, 0);
     top: 70px;
     padding: 10px;

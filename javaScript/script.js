@@ -1,7 +1,4 @@
 
-
-// /////////////////////////////////////////////////////////////////////
-
 let allProducts = document.querySelector(".Products")
 
 let products = [
@@ -65,19 +62,42 @@ drawItems()
 
 // ///////////////////////////////////////////////////////////////
 
-let cartProductDiv = document.querySelector(".carts_products div")
+let badge = document.querySelector(".badge");
+let buyProudect = document.querySelector(".buyProudect");
 
-let badge = document.querySelector(".badge")
+let quantity = 1;
 
 let addedItem = localStorage.getItem("productsInCart") ? JSON.parse(localStorage.getItem("productsInCart")) : [];
 
 if (addedItem) {
     addedItem.map(item => {
-        cartProductDiv.innerHTML += `<p>${item.title}</p>`
+        drawbuyProudect(item);
+        // document.getElementById(`add-btn-${item.id}`).style.display = "none";
+        // document.getElementById(`remove-btn-${item.id}`).style.display = "inline-block";
     })
-    badge.style.display = "block";
-    badge.innerHTML = addedItem.length;
+
+
+    if (addedItem.length != 0) {
+        badge.style.display = "block";
+        badge.innerHTML = addedItem.length;
+    }
+    else {
+        badge.style.display = "none";
+    }
 }
+
+function drawbuyProudect(item) {
+    // if (!document.getElementById(`buyProudectItem-${item.id}`)) {
+    //     let quantity = +(localStorage.getItem(`quantity-${item.id}`)) || 1;
+
+    buyProudect.innerHTML += `<div id="buyProudectItem-${item.id}" class="row my-2 pr-2">
+        <span class="col-6">${item.title}</span>
+        <span class="text-danger mins col-2" onClick="mins(${item.id},${item.salePrice})">-</span>
+        <span class="col-2" id="quantity-${item.id}">${quantity}</span>
+        <span class="text-success pls col-2" onClick="pls(${item.id},${item.salePrice})">+</span>
+      </div>`;
+}
+// }
 // ////////////////////////////////////////////addToFav/////////////////////////////////////////////////
 
 function addToFav(id) {
@@ -99,21 +119,21 @@ function addToFav(id) {
     }
 }
 //////////////////////////////////////addToCart///////////////////////////////////////////////
+function addToCart(id) {
+    if (localStorage.getItem = ("userName")) {
 
-if (localStorage.getItem = ("userName")) {
-    function addToCart(id) {
         let choosenItem = products.find((item) => item.id === id);
-        cartProductDiv.innerHTML += `<p>${choosenItem.title}</p>`
+        buyProudect.innerHTML += `<p>${choosenItem.title}</p>`
         addedItem = [...addedItem, choosenItem];
         localStorage.setItem("productsInCart", JSON.stringify(addedItem))
         let cartProductsLength = document.querySelectorAll(".carts_products div p")
 
         badge.style.display = "block";
         badge.innerHTML = cartProductsLength.length;
-    }
 
-} else {
-    window.location = "login.html"
+    } else {
+        window.location = "login.html"
+    }
 }
 
 
@@ -125,7 +145,7 @@ let cartsProducts = document.querySelector(".carts_products")
 shoppingCartIcon.addEventListener("click", opencart)
 
 function opencart() {
-    if (cartProductDiv.innerHTML != "") {
+    if (buyProudect.innerHTML != "") {
         if (cartsProducts.style.display == "block") {
             cartsProducts.style.display = "none"
         } else {
@@ -134,7 +154,67 @@ function opencart() {
     }
 }
 
-// ///////////////////////////////////////////////////////////////////////
+// //////////////////////////////----------Search--------/////////////////////////////////////////
+
+let search = document.getElementById('search');
+let searchOption = document.getElementById('searchOption');
+// let searchCategory = document.getElementById('title');
+let modeSearch = 'title ';
+
+
+searchOption.addEventListener('change', function () {
+    let selectedValue = this.value;
+
+    if (selectedValue === "searchTittle") {
+        modeSearch = 'title ';
+        console.log(searchOption.value);
+    } else if (selectedValue === "searchPrice") {
+        modeSearch = 'price';
+        console.log(searchOption.value);
+    }
+
+    search.placeholder = `search by ${modeSearch}`;
+    search.focus();
+    search.value = '';
+});
+
+
+// -----
+function searchData(value) {
+    let filteredProducts = products.filter((item) => {
+        if (modeSearch === 'title ') {
+            return item.title.toLowerCase().includes(value.toLowerCase());
+        } else if (modeSearch === 'price') {
+            return item.price.toLowerCase().includes(value.toLowerCase());
+        }
+    });
+
+
+    let y = filteredProducts.map((item) => {
+        return ` 
+        <div class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
+              <div class="card border border-info my-4 pt-3">
+                 <img class=" Products-item-img card-img-top m-auto" src="${item.imageUrl}" alt="image" >
+                 <div class="products-contant card-body" width="100%">
+                            <h5 class="title  card-title ">${item.title}</h5>
+                            <p><del>${item.price}</del> ${item.salePrice}</p>
+                            <button class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
+                            <i id="fav-${item.id}" class="far fa-heart" onClick="addToFav(${item.id})"></i>    
+                 </div> 
+
+                
+
+                </div>
+        </div>
+        
+        `
+
+    })
+
+    allProducts.innerHTML = y.join('');
+}
+
+
 
 
 
