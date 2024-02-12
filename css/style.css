@@ -287,3 +287,65 @@ main .wave::before {
 .Products-form .card .products-contant .AddToCartBtn {
     display: block;
 }
+
+/* /////////////////////////specialsSection//////////////////////// */
+
+.sec4 {
+    background: linear-gradient(270deg, #fce1af 0%, #f5f4ec 80%);
+}
+
+.specials-sec {
+    position: relative;
+    height: 100vh;
+}
+
+
+.specials-sec .specials-contant {
+    margin-top: 100px;
+}
+
+.specials-contant h2 .fa-ice-cream {
+    rotate: 30deg;
+}
+
+.specials-sec .specials-img {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.specials-sec .specials-img .specials-img-img {
+    height: 500px;
+    width: 100%;
+}
+
+
+/* /////////////////////////////////////////footerSection////////////////////////////////////////////// */
+footer {
+    /* background-color: #f28482; */
+    /* background-color: #f5f4ec;  */
+    color: #84a59d;
+    padding: 50px;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+
+.footer-containt .footer-img {
+    transition: 1s;
+}
+
+.footer-containt .footer-img:hover {
+    background-color: #fce1af;
+}
+
+.footer-containt p a {
+    color: #84a59d;
+    text-decoration: none;
+}
+
+.footer-containt p a:hover {
+    color: rgb(92, 96, 99);
+}
+
+/* ------------------- */
