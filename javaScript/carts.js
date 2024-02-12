@@ -10,6 +10,7 @@ if (productsInCart) {
 function drawCartProducts(products) {
 
     let y = products.map((item) => {
+        // let quantity = +(localStorage.getItem(`quantity-${item.id}`)) || 1;
         return ` 
         <div id="product-${item.id}" class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
               <div class="card border border-info my-4 pt-3">
@@ -20,8 +21,6 @@ function drawCartProducts(products) {
                             <button id="" class="btn removebtn btn-secondary" onClick="removeFromCart(${item.id})">Remove From Cart</button>
                  </div> 
 
-                
-
                 </div>
         </div>
         `
@@ -31,7 +30,7 @@ function drawCartProducts(products) {
 }
 
 let addedItem = localStorage.getItem("productsInCart") ? JSON.parse(localStorage.getItem("productsInCart")) : [];
-
+let quantity = 1;
 
 function removeFromCart(id) {
     let itemIndex = addedItem.findIndex((item) => item.id === id);

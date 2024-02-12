@@ -63,6 +63,13 @@ nav ul#user_info li .badge {
 
 }
 
+.pls,
+.minus {
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: -5px;
+}
+
 /* /////////////////////////////////////////////////////////////////////////////// */
 main {
     height: 120vh;
@@ -271,4 +278,12 @@ main .wave::before {
     font-size: 25px;
     cursor: pointer;
 
+}
+
+.Products-form .card .products-contant .RemoveFromCartBtn {
+    display: none;
+}
+
+.Products-form .card .products-contant .AddToCartBtn {
+    display: block;
 }
