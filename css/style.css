@@ -273,7 +273,7 @@ main .wave::before {
 
 .specials-sec {
     position: relative;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 
