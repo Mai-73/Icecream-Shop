@@ -131,11 +131,16 @@ function addToFavorites(id) {
     // console.log(favItem);
 
     if (!favItem.includes(id)) {
-        favItem.push(id);
-        // favItem.push(title);
-        // favItem.push(price);
-        // favItem.push(salePrice);
-        // favItem.push(imageUrl);
+        let choosenItem = products.find((item) => item.id === id);
+
+        let itemIndex = favItem.findIndex((item) => item.id === id);
+        if (itemIndex === -1) {
+
+
+            favItem = [...favItem, choosenItem];
+            // localStorage.setItem("productsInFav", JSON.stringify(favItem));
+        }
+
 
     }
 
