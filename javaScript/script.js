@@ -49,7 +49,7 @@ function drawItems() {
                             <p><del>${item.price}</del> ${item.salePrice}</p>
                             <button id="add-btn-${item.id}" class="AddToCartBtn btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
                             <button id="remove-btn-${item.id}" class="RemoveFromCartBtn btn btn-secondary" onClick="removeFromCart(${item.id})">Remove From Cart</button>
-                            <i id="fav-${item.id}" class="far fa-heart" onClick="addToFav(${item.id})"></i>    
+                            <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>    
                  </div> 
 
                 
@@ -102,26 +102,58 @@ function drawbuyProudect(item) {
       </div>`;
     }
 }
-// ////////////////////////////////////////////addToFav/////////////////////////////////////////////////
+// ////////////////////////////////////////////favorites/////////////////////////////////////////////////
 
-function addToFav(id) {
+let favItem = localStorage.getItem("productsInFav") ? JSON.parse(localStorage.getItem("productsInFav")) : [];
+
+
+function favorites(id) {
     if (localStorage.getItem("userName")) {
         var heartIcon = document.getElementById(`fav-${id}`);
         if (heartIcon.classList.contains("far")) {
             heartIcon.classList.remove("far");
             heartIcon.classList.add("fas");
             heartIcon.style.color = "red";
-            // addToFavorites(id);
+            addToFavorites(id);
         } else {
             heartIcon.classList.remove("fas");
             heartIcon.classList.add("far");
             heartIcon.style.color = "black";
-            // removeFromFavorites(id);
+            removeFromFavorites(id);
         }
     } else {
         window.location = "login.html";
     }
 }
+
+////////////////////////////////////////// addToFavorites//////////////////////////////////////////////////////
+function addToFavorites(id) {
+    // console.log(favItem);
+
+    if (!favItem.includes(id)) {
+        favItem.push(id);
+        // favItem.push(title);
+        // favItem.push(price);
+        // favItem.push(salePrice);
+        // favItem.push(imageUrl);
+
+    }
+
+    localStorage.setItem("productsInFav", JSON.stringify(favItem));
+
+
+}
+
+////////////////////////////////////removeFromFavorites/////////////////////////////////////////////////
+function removeFromFavorites(id) {
+    let index = favItem.indexOf(id);
+    if (index !== -1) {
+        favItem.splice(index, 1);
+    }
+
+    localStorage.setItem("productsInFav", JSON.stringify(favItem));
+}
+
 //////////////////////////////////////addToCart///////////////////////////////////////////////
 function addToCart(id) {
     if (localStorage.getItem("userName")) {
@@ -134,7 +166,7 @@ function addToCart(id) {
             drawbuyProudect(choosenItem);
 
             addedItem = [...addedItem, choosenItem];
-            localStorage.setItem("productsInCart", JSON.stringify(addedItem))
+            localStorage.setItem("productsInCart", JSON.stringify(addedItem));
 
             document.getElementById(`add-btn-${id}`).style.display = "none";
             document.getElementById(`remove-btn-${id}`).style.display = "inline-block";
@@ -196,15 +228,6 @@ function removeFromCart(id) {
             productItem.remove();
 
         }
-
-
-        // addItemStorage.forEach((item) => {
-        //     drawbuyProudect(item);
-        //     // total += +item.salePrice * quantity;
-        //     // total += +item.salePrice * +(localStorage.getItem(`quantity-${item.id}`));
-
-        // });
-
 
         if (addedItem.length != 0) {
             badge.style.display = "block";
@@ -280,7 +303,7 @@ function searchData(value) {
                             <h5 class="title  card-title ">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
                             <button class="btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
-                            <i id="fav-${item.id}" class="far fa-heart" onClick="addToFav(${item.id})"></i>    
+                            <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>    
                  </div> 
 
                 
