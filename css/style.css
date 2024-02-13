@@ -6,8 +6,6 @@
 }
 
 nav {
-    /* background-color: rgb(248, 248, 248); */
-    /* position: absolute; */
     height: 80px;
     z-index: 5;
 }
@@ -27,7 +25,6 @@ nav ul#user_info li .badge {
     position: absolute;
     width: 20px;
     height: 20px;
-    /* background-color: #f28482; */
     color: #000000;
     background-color: #f0bf45;
     text-align: center;
@@ -37,12 +34,10 @@ nav ul#user_info li .badge {
     right: 165px;
     font-size: 12px;
     display: none;
-
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 .shopping_cart .carts_products {
-    /* position: relative; */
     position: absolute;
     width: 300px;
     transform: translate(-40%, 0);
@@ -76,14 +71,12 @@ main {
     width: 100%;
     position: relative;
     background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
-
 }
 
 .main-sec {
     height: 100%;
     width: 100%;
     position: absolute;
-
 }
 
 .main-contant {
@@ -117,7 +110,6 @@ main .wave::before {
     background-image: url(../images/wave444.png);
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .main-sec .main-img {
@@ -199,7 +191,6 @@ main .wave::before {
     background-image: url(../images/wave4441.png);
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 /* /////////////////////////////////////////SECTION|_2//////////////////////////////////////////// */
@@ -247,25 +238,12 @@ main .wave::before {
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 .Products-form {
     height: 550px;
-    /* width: 20%;  */
-    /* background-color: #f0bf45; */
-    /* border: 1px solid #84a59d; */
 }
 
 .Products-form .Products-item-img {
-    /* margin: 10px auto; */
     width: 90%;
     height: 350px;
-
 }
-
-/* 
-.Products-form .Products-item .products-contant {
-    position: absolute;
-    padding-top: 10px;
-    width: 100%;
-
-} */
 
 .Products-form .card .products-contant h5 {
     font-weight: bolder;
@@ -277,7 +255,6 @@ main .wave::before {
     right: 55px;
     font-size: 25px;
     cursor: pointer;
-
 }
 
 .Products-form .card .products-contant .RemoveFromCartBtn {
@@ -322,13 +299,11 @@ main .wave::before {
 
 /* /////////////////////////////////////////footerSection////////////////////////////////////////////// */
 footer {
-    /* background-color: #f28482; */
-    /* background-color: #f5f4ec;  */
-    color: #84a59d;
     padding: 50px;
     word-spacing: 2px;
     letter-spacing: 2px;
     line-height: 30px;
+    /* background-color: rgba(132, 165, 157, 0.075); */
 }
 
 .footer-containt .footer-img {
@@ -348,4 +323,12 @@ footer {
     color: rgb(92, 96, 99);
 }
 
-/* ------------------- */
+.footer-containt div .icon-links a {
+    color: #f28482;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.footer-containt div .icon-links a:hover {
+    color: rgba(242, 132, 130, 0.767);
+}

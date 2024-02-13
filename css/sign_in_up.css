@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Comfortaa", sans-serif;
-
 }
-
-
 
 .section-form {
     position: absolute;
@@ -24,7 +21,6 @@
     margin: 8px auto;
     outline: none;
     border: 1px solid #347f9c;
-
 }
 
 .section-form form input[type="submit"]:hover {

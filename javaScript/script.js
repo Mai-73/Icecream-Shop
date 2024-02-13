@@ -1,4 +1,3 @@
-
 let allProducts = document.querySelector(".Products")
 
 let products = [
@@ -33,9 +32,6 @@ let products = [
     { id: 29, title: "Honey Ice Cream", price: "20 EGP", salePrice: "17 EGP", imageUrl: "images/Honey.jpg" },
     { id: 30, title: "Cereal Ice Cream", price: "20 EGP", salePrice: "17 EGP", imageUrl: "images/cereal.jpg" },
     { id: 31, title: "Candy Ice Cream", price: "20 EGP", salePrice: "17 EGP", imageUrl: "images/candy-flavored.jpg" },
-
-
-
 ]
 
 function drawItems() {
@@ -52,13 +48,10 @@ function drawItems() {
                             <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>    
                  </div> 
 
-                
-
                 </div>
         </div>
         
         `
-
     })
     allProducts.innerHTML = y.join('');
 }
@@ -128,7 +121,6 @@ function favorites(id) {
 
 ////////////////////////////////////////// addToFavorites//////////////////////////////////////////////////////
 function addToFavorites(id) {
-    // console.log(favItem);
 
     if (!favItem.includes(id)) {
         let choosenItem = products.find((item) => item.id === id);
@@ -136,17 +128,12 @@ function addToFavorites(id) {
         let itemIndex = favItem.findIndex((item) => item.id === id);
         if (itemIndex === -1) {
 
-
             favItem = [...favItem, choosenItem];
-            // localStorage.setItem("productsInFav", JSON.stringify(favItem));
+        
         }
-
-
     }
 
     localStorage.setItem("productsInFav", JSON.stringify(favItem));
-
-
 }
 
 ////////////////////////////////////removeFromFavorites/////////////////////////////////////////////////
@@ -267,7 +254,6 @@ function opencart() {
 
 let search = document.getElementById('search');
 let searchOption = document.getElementById('searchOption');
-// let searchCategory = document.getElementById('title');
 let modeSearch = 'title ';
 
 
@@ -288,7 +274,7 @@ searchOption.addEventListener('change', function () {
 });
 
 
-// -----
+// --------------------------------------------------
 function searchData(value) {
     let filteredProducts = products.filter((item) => {
         if (modeSearch === 'title ') {
@@ -297,7 +283,6 @@ function searchData(value) {
             return item.price.toLowerCase().includes(value.toLowerCase());
         }
     });
-
 
     let y = filteredProducts.map((item) => {
         return ` 
@@ -311,13 +296,10 @@ function searchData(value) {
                             <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>    
                  </div> 
 
-                
-
                 </div>
         </div>
-        
-        `
 
+        `
     })
 
     allProducts.innerHTML = y.join('');

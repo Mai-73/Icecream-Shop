@@ -1,4 +1,3 @@
-
 let userName = document.querySelector("#userName");
 let password = document.querySelector("#password");
 let loginBtn = document.querySelector("#signIn");
