@@ -200,11 +200,11 @@ main .wave::before {
     background-color: rgba(242, 132, 130, 0.575);
 }
 
-.aboutabout-sec {
+.sec2 .about-sec {
     position: relative;
 }
 
-.about-sec .wave::before {
+.sec2 .about-sec .wave2::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -214,6 +214,8 @@ main .wave::before {
     background-image: url(../images/wave444.png);
     background-repeat: no-repeat;
     background-size: cover;
+
+
 }
 
 .about-sec .about-contant {
