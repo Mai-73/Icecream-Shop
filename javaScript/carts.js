@@ -6,9 +6,13 @@ if (productsInCart) {
     drawCartProducts(item)
 }
 
+
+
+
 function drawCartProducts(products) {
 
     let y = products.map((item) => {
+        let quantity = +(localStorage.getItem(`quantity-${item.id}`)) || 1;
         //
         return ` 
         <div id="product-${item.id}" class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
@@ -16,9 +20,15 @@ function drawCartProducts(products) {
                  <img class=" Products-item-img card-img-top m-auto" src="${item.imageUrl}" alt="image" >
                  <div class="products-contant card-body" width="100%">
                             <h5 class="title card-title">${item.title}</h5>
-                            <p><del>${item.price}</del> ${item.salePrice}</p>
-                            <button id="" class="btn removebtn btn-secondary" onClick="removeFromCart(${item.id})">Remove From Cart</button>
-                 </div> 
+                            <span><del>${item.price}</del> ${item.salePrice}</span>
+                            
+                            <span class="text-danger minus col-2 ml-5" onClick="minus(${item.id})">-</span>
+                            <span class="col-2" style="font-size: 18px;" id="quantity-${item.id}">${quantity}</span>
+                            <span class="text-success pls col-2" onClick="pls(${item.id})">+</span>
+                           
+                            <button id="" class="btn removebtn btn-secondary mt-3" onClick="removeFromCart(${item.id})">Remove From Cart</button>
+                 
+                            </div> 
 
                 </div>
         </div>
@@ -33,10 +43,15 @@ let quantity = 1;
 
 function removeFromCart(id) {
     let itemIndex = addedItem.findIndex((item) => item.id === id);
+    let quantityElement = document.getElementById(`quantity-${id}`);
+    let quantity = +(quantityElement.innerHTML);
 
     if (itemIndex !== -1) {
         addedItem.splice(itemIndex, 1);
         localStorage.setItem("productsInCart", JSON.stringify(addedItem));
+
+        quantity = 0
+        localStorage.setItem(`quantity-${id}`, quantity.toString());
 
         let productItem = document.getElementById(`product-${id}`);
         if (productItem) {
@@ -46,24 +61,30 @@ function removeFromCart(id) {
     }
 }
 
-// function addToCart(id) {
-//     // let choosenItem = products.find((item) => item.id === id);
+//////////////////////////////////////plusBtn///////////////////////////////////////////////
+function pls(id) {
+    let quantityElement = document.getElementById(`quantity-${id}`);
+    let quantity = +(quantityElement.innerHTML);
 
-//     let itemIndex = favItem.findIndex((item) => item.id === id);
+    quantity++;
+    quantityElement.innerHTML = quantity;
+    localStorage.setItem(`quantity-${id}`, quantity.toString());
 
-//     if (itemIndex === -1) {
-//         drawCartProducts(itemIndex);
+}
 
-//         // addedItem = [...addedItem, choosenItem];
-//         localStorage.setItem("productsInCart", JSON.stringify(addedItem));
-
-
-//         document.getElementById(`add-btn-${id}`).style.display = "none";
-//         document.getElementById(`remove-btn-${id}`).style.display = "inline-block";
-
-
-//     }
-// }
+//////////////////////////////////////minusBtn///////////////////////////////////////////////
+function minus(id) {
+    let quantityElement = document.getElementById(`quantity-${id}`);
+    let quantity = +(quantityElement.innerHTML);
+    if (quantity > 1) {
+        quantity--;
+        quantityElement.innerHTML = quantity;
+        localStorage.setItem(`quantity-${id}`, quantity.toString());
+    }
+    else {
+        removeFromCart(id);
+    }
+}
 
 
 // //////////////////////////////////FavoriteSction/////////////////////////////////////////////
@@ -118,4 +139,29 @@ function removeFromFav(id) {
         }
 
     }
+}
+
+
+//////////////////////////////////////addToCart///////////////////////////////////////////////
+function addToCart(id) {
+
+    let choosenItem = favItem.find((item) => item.id === id);
+
+    let itemIndex = favItem.findIndex((item) => item.id === id);
+
+    if (itemIndex === -1) {
+        drawCartProducts(choosenItem);
+
+        localStorage.setItem("productsInCart", JSON.stringify(favItem));
+
+        document.getElementById(`add-btn-${id}`).style.display = "none";
+        document.getElementById(`remove-btn-${id}`).style.display = "inline-block";
+
+
+        if (favItem.length != 0) {
+            badge.style.display = "block";
+            badge.innerHTML = favItem.length;
+        }
+    }
+
 }

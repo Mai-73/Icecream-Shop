@@ -37,6 +37,7 @@ nav ul#user_info li .badge {
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////// */
+
 .shopping_cart .carts_products {
     position: absolute;
     width: 300px;
@@ -55,7 +56,6 @@ nav ul#user_info li .badge {
     margin: 4px 0;
     text-decoration: none;
     text-align: center;
-
 }
 
 .pls,
@@ -66,8 +66,9 @@ nav ul#user_info li .badge {
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
+
 main {
-    height: 120vh;
+    height: 100vh;
     width: 100%;
     position: relative;
     background: linear-gradient(225deg, #f28482 10%, #ffffff 50%, #84a59d 90%);
@@ -133,8 +134,8 @@ main .wave::before {
     text-transform: capitalize;
 }
 
-
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 .sec1 {
     position: relative;
 }
@@ -193,15 +194,14 @@ main .wave::before {
     background-size: cover;
 }
 
-/* /////////////////////////////////////////SECTION|_2//////////////////////////////////////////// */
+/* /////////////////////////////////////////AboutSection_2//////////////////////////////////////////// */
 
 .sec2 {
     background-color: rgba(242, 132, 130, 0.575);
 }
 
-.about-sec {
+.aboutabout-sec {
     position: relative;
-    height: 900px;
 }
 
 .about-sec .wave::before {
@@ -252,7 +252,7 @@ main .wave::before {
 .Products-form .card .products-contant .fa-heart {
     position: absolute;
     bottom: 30px;
-    right: 55px;
+    right: 30px;
     font-size: 25px;
     cursor: pointer;
 }
@@ -265,7 +265,7 @@ main .wave::before {
     display: block;
 }
 
-/* /////////////////////////specialsSection//////////////////////// */
+/* ////////////////////////////////////////////////specialsSection///////////////////////////////////////////// */
 
 .sec4 {
     background: linear-gradient(270deg, #fce1af 0%, #f5f4ec 80%);
@@ -273,7 +273,6 @@ main .wave::before {
 
 .specials-sec {
     position: relative;
-    /* height: 100vh; */
 }
 
 
@@ -303,7 +302,6 @@ footer {
     word-spacing: 2px;
     letter-spacing: 2px;
     line-height: 30px;
-    /* background-color: rgba(132, 165, 157, 0.075); */
 }
 
 .footer-containt .footer-img {

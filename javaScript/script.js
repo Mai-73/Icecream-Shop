@@ -42,10 +42,11 @@ function drawItems() {
                  <img class=" Products-item-img card-img-top m-auto" src="${item.imageUrl}" alt="image" >
                  <div class="products-contant card-body" width="100%">
                             <h5 class="title card-title">${item.title}</h5>
+                            <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
                             <button id="add-btn-${item.id}" class="AddToCartBtn btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
                             <button id="remove-btn-${item.id}" class="RemoveFromCartBtn btn btn-secondary" onClick="removeFromCart(${item.id})">Remove From Cart</button>
-                            <i id="fav-${item.id}" class="far fa-heart" onClick="favorites(${item.id})"></i>    
+                                
                  </div> 
 
                 </div>
@@ -129,7 +130,7 @@ function addToFavorites(id) {
         if (itemIndex === -1) {
 
             favItem = [...favItem, choosenItem];
-        
+
         }
     }
 
@@ -206,7 +207,8 @@ function minus(id) {
 //////////////////////////////////////removeFromCart///////////////////////////////////////////////
 function removeFromCart(id) {
     let itemIndex = addedItem.findIndex((item) => item.id === id);
-
+    let quantityElement = document.getElementById(`quantity-${id}`);
+    let quantity = +(quantityElement.innerHTML);
 
     if (itemIndex !== -1) {
         addedItem.splice(itemIndex, 1);
@@ -214,6 +216,9 @@ function removeFromCart(id) {
 
         document.getElementById(`add-btn-${id}`).style.display = "inline-block";
         document.getElementById(`remove-btn-${id}`).style.display = "none";
+        
+        quantity = 0
+        localStorage.setItem(`quantity-${id}`, quantity.toString());
 
         let productItem = document.getElementById(`buyProudectItem-${id}`);
         if (productItem) {
