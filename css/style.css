@@ -253,7 +253,7 @@ main .wave::before {
 
 .Products-form .card .products-contant .fa-heart {
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
     right: 30px;
     font-size: 25px;
     cursor: pointer;
@@ -306,12 +306,12 @@ footer {
     line-height: 30px;
 }
 
-.footer-containt .footer-img {
+.footer-containt .custom-shadow1 {
     transition: 1s;
 }
 
-.footer-containt .footer-img:hover {
-    background-color: #fce1af;
+.footer-containt .custom-shadow1:hover {
+    background-color: rgb(252, 225, 175);
 }
 
 .footer-containt p a {

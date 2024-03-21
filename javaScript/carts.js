@@ -110,8 +110,6 @@ function drawFavProducts(products) {
                  <div class="products-contant card-body" width="100%">
                             <h5 class="title card-title">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
-                            <button id="add-btn-${item.id}" class="AddToCartBtn btn btn-secondary" onClick="addToCart(${item.id})">Add To Cart</button>
-                            <button id="remove-btn-${item.id}" class="RemoveFromCartBtn btn btn-secondary" onClick="removeFromCart(${item.id})">Remove From Cart</button>
                             <i id="fav-${item.id}" class="fas fa-heart" style="color: red;" onClick="removeFromFav(${item.id})"></i>    
                  </div> 
 
