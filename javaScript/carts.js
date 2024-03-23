@@ -6,9 +6,6 @@ if (productsInCart) {
     drawCartProducts(item)
 }
 
-
-
-
 function drawCartProducts(products) {
 
     let y = products.map((item) => {
@@ -92,22 +89,21 @@ function minus(id) {
 let productsInFav = localStorage.getItem("productsInFav");
 let allfavorites = document.querySelector(".favorites");
 
-let favItem = localStorage.getItem("productsInFav") ? JSON.parse(localStorage.getItem("productsInFav")) : [];
 
 if (productsInFav) {
     let item = JSON.parse(productsInFav);
     drawFavProducts(item)
 }
 
-function drawFavProducts(products) {
+function drawFavProducts(favorites) {
 
-    let fav = products.map((item) => {
+    let fav = favorites.map((item) => {
 
         return ` 
-        <div id="product-${item.id}" class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
+        <div id="favorite-${item.id}" class="col-lg-4 col-sm-6 Products-form  mb-4 pb-4" >
               <div class="card border border-info my-4 pt-3">
                  <img class=" Products-item-img card-img-top m-auto" src="${item.imageUrl}" alt="image" >
-                 <div class="products-contant card-body" width="100%">
+                 <div class="favorites-contant card-body" width="100%">
                             <h5 class="title card-title">${item.title}</h5>
                             <p><del>${item.price}</del> ${item.salePrice}</p>
                             <i id="fav-${item.id}" class="fas fa-heart" style="color: red;" onClick="removeFromFav(${item.id})"></i>    
@@ -122,6 +118,10 @@ function drawFavProducts(products) {
     allfavorites.innerHTML = fav.join('');
 }
 
+
+let favItem = localStorage.getItem("productsInFav") ? JSON.parse(localStorage.getItem("productsInFav")) : [];
+
+
 ////////////////////////////////////////removeFromFav///////////////////////////////////////////////
 
 function removeFromFav(id) {
@@ -131,35 +131,10 @@ function removeFromFav(id) {
         favItem.splice(itemIndex, 1);
         localStorage.setItem("productsInFav", JSON.stringify(favItem));
 
-        let productItem = document.getElementById(`product-${id}`);
+        let productItem = document.getElementById(`favorite-${id}`);
         if (productItem) {
             productItem.remove();
         }
 
     }
-}
-
-
-//////////////////////////////////////addToCart///////////////////////////////////////////////
-function addToCart(id) {
-
-    let choosenItem = favItem.find((item) => item.id === id);
-
-    let itemIndex = favItem.findIndex((item) => item.id === id);
-
-    if (itemIndex === -1) {
-        drawCartProducts(choosenItem);
-
-        localStorage.setItem("productsInCart", JSON.stringify(favItem));
-
-        document.getElementById(`add-btn-${id}`).style.display = "none";
-        document.getElementById(`remove-btn-${id}`).style.display = "inline-block";
-
-
-        if (favItem.length != 0) {
-            badge.style.display = "block";
-            badge.innerHTML = favItem.length;
-        }
-    }
-
 }

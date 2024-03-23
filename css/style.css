@@ -251,7 +251,8 @@ main .wave::before {
     font-weight: bolder;
 }
 
-.Products-form .card .products-contant .fa-heart {
+.Products-form .card .products-contant .fa-heart , 
+.Products-form .card .favorites-contant .fa-heart{
     position: absolute;
     bottom: 35px;
     right: 30px;

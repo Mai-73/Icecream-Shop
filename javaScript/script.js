@@ -100,7 +100,6 @@ function drawbuyProudect(item) {
 
 let favItem = localStorage.getItem("productsInFav") ? JSON.parse(localStorage.getItem("productsInFav")) : [];
 
-
 function favorites(id) {
     if (localStorage.getItem("userName")) {
         var heartIcon = document.getElementById(`fav-${id}`);
@@ -109,6 +108,7 @@ function favorites(id) {
             heartIcon.classList.add("fas");
             heartIcon.style.color = "red";
             addToFavorites(id);
+
         } else {
             heartIcon.classList.remove("fas");
             heartIcon.classList.add("far");
@@ -122,29 +122,22 @@ function favorites(id) {
 
 ////////////////////////////////////////// addToFavorites//////////////////////////////////////////////////////
 function addToFavorites(id) {
+    let choosenItem = products.find((item) => item.id === id);
+    let itemIndex = favItem.findIndex((item) => item.id === id);
 
-    if (!favItem.includes(id)) {
-        let choosenItem = products.find((item) => item.id === id);
-
-        let itemIndex = favItem.findIndex((item) => item.id === id);
-        if (itemIndex === -1) {
-
-            favItem = [...favItem, choosenItem];
-
-        }
+    if (itemIndex === -1) {
+        favItem = [...favItem, choosenItem];
+        localStorage.setItem("productsInFav", JSON.stringify(favItem));
     }
-
-    localStorage.setItem("productsInFav", JSON.stringify(favItem));
 }
 
 ////////////////////////////////////removeFromFavorites/////////////////////////////////////////////////
 function removeFromFavorites(id) {
-    let index = favItem.indexOf(id);
-    if (index !== -1) {
-        favItem.splice(index, 1);
+    let itemIndex = favItem.findIndex((item) => item.id === id);
+    if (itemIndex !== -1) {
+        favItem.splice(itemIndex, 1);
+        localStorage.setItem("productsInFav", JSON.stringify(favItem));
     }
-
-    localStorage.setItem("productsInFav", JSON.stringify(favItem));
 }
 
 //////////////////////////////////////addToCart///////////////////////////////////////////////
@@ -216,7 +209,7 @@ function removeFromCart(id) {
 
         document.getElementById(`add-btn-${id}`).style.display = "inline-block";
         document.getElementById(`remove-btn-${id}`).style.display = "none";
-        
+
         quantity = 0
         localStorage.setItem(`quantity-${id}`, quantity.toString());
 
